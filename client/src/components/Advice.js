@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../App.css";
 
 function Advice() {
   const [advice, setAdvice] = useState(null);
@@ -16,17 +17,18 @@ function Advice() {
   });
 
   return (
-    <div>
-      <h1>Musings</h1>
-      <div>{loading ? <div>...loading</div> : <div>{advice}</div>} </div>
-      <button
-        className="advice-btn"
-        onClick={() => {
-          setAdvice();
-        }}
-      >
-        Get Mindful Thoughts
-      </button>
+    <div className="app">
+      <div className="card">
+        <h2 className="heading">{advice}</h2>
+        <button
+          className="button"
+          onClick={() => {
+            setAdvice();
+          }}
+        >
+          Get Mindful Thoughts
+        </button>
+      </div>
     </div>
   );
 }
